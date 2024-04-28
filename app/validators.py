@@ -2,7 +2,7 @@ from datetime import datetime
 from fastapi import HTTPException
 from datetime import time
 
-from sqlalchemy import select, Result, func
+from sqlalchemy import select, func
 from sqlalchemy.orm import Session
 
 from app.crud import create_walkers
@@ -20,7 +20,7 @@ def validate_walk_start_minute(walk_start_time: datetime):
     if walk_start_time.minute not in (0, 30):
         raise HTTPException(
             status_code=400,
-            detail="Прогулка может начинаться либо в начале часа, либо в полчаса."
+            detail="Время начала прогулки должно быть в 00 или 30 минутах."
         )
 
 
@@ -40,5 +40,7 @@ def get_available_walker_id(
     stmt = select(func.count()).where(Walk.start_time == walk_start_time)
     current_walks = session.execute(stmt).scalar()
     if current_walks >= 2:
-        raise HTTPException(status_code=400, detail="Нет свободного выгульщика.")
+        raise HTTPException(
+            status_code=400, detail="Нет свободного выгульщика."
+        )
     return 1 if current_walks == 0 else 2

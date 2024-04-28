@@ -1,7 +1,13 @@
 from datetime import datetime
 
 from sqlalchemy import ForeignKey
-from sqlalchemy.orm import Mapped, relationship, mapped_column, DeclarativeBase, declared_attr
+from sqlalchemy.orm import (
+    Mapped,
+    relationship,
+    mapped_column,
+    DeclarativeBase,
+    declared_attr
+)
 
 
 class Base(DeclarativeBase):
@@ -12,7 +18,6 @@ class Base(DeclarativeBase):
         return f"{cls.__name__.lower()}s"
 
     id: Mapped[int] = mapped_column(primary_key=True)
-
 
 
 class Walker(Base):

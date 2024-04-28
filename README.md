@@ -27,7 +27,7 @@ git clone https://github.com/SuperIgorOK/TestForMirrorApp
 ```
 pip install poetry
 poetry shell
-poetry install
+poetry installflake
 ```
 #### Запускаем приложение:
 ```

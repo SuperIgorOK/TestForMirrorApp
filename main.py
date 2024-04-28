@@ -48,7 +48,10 @@ def get_all_walks(
 
 
 @app.post("/walks/", response_model=schemas.Walk)
-def create_walk(walk: schemas.WalkCreate, session: Session = Depends(get_db)) -> Walk:
+def create_walk(
+        walk: schemas.WalkCreate,
+        session: Session = Depends(get_db)
+) -> Walk:
     # Валидация времени прогулки
     validate_walk_start_minute(walk.start_time)
     validate_walk_time_range(walk.start_time)
