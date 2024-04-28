@@ -17,13 +17,3 @@ class Walk(WalkBase):
     id: int
     start_time: datetime
     walker_id: int
-
-
-class WalkerBase(BaseModel):
-    id: int
-    name: str
-
-
-class Walker(WalkerBase):
-    model_config = ConfigDict(from_attributes=True)
-    walks: list[Walk] = []
