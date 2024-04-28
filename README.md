@@ -22,15 +22,12 @@
 ```
 git clone https://github.com/SuperIgorOK/TestForMirrorApp
 ```
-#### Перейти в директорию проекта:
-```
-cd TestForMirrorApp
-```
+
 #### Если Poetry не установлен:
 ```
 pip install poetry
 poetry shell
-poetry installflake
+poetry install
 ```
 #### Запускаем приложение:
 ```
