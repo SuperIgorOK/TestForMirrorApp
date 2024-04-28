@@ -26,11 +26,10 @@ git clone https://github.com/SuperIgorOK/TestForMirrorApp
 #### Если Poetry не установлен:
 ```
 pip install poetry
-
+poetry shell
+poetry install
 ```
 #### Запускаем приложение:
 ```
-poetry install
-poetry shell
 poetry run uvicorn main:app
 ```
