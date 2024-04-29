@@ -13,7 +13,7 @@
  2. Оформление заказа
 
 ### **Используемый стэк:**
-* Python 3.12, FastAPI, SQLAlchemy 2.0, SQLite
+* Python 3.12, FastAPI, SQLAlchemy 2.0, Pydantic, SQLite
 * Пакетный менеджер: Poetry
 * Линтер: Flake8
 
